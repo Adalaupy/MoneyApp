@@ -1,4 +1,4 @@
-import { TouchableOpacity, View, Text } from "react-native"
+import { TouchableOpacity, SafeAreaView, View, Text } from "react-native"
 import DropDownPicker from 'react-native-dropdown-picker';
 import styles from "./Chart.style";
 import PieChartElem from "../../components/graph/PieChart";
@@ -51,10 +51,12 @@ const Chart = () => {
     return (
 
 
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
 
 
             <View style={styles.PickDatChartContainer}>
+
+
                 <View style={styles.PeriodContainer}>
 
                     <TouchableOpacity style={styles.PeriodBtn(PeriodPicked, "Monthly")}
@@ -98,7 +100,7 @@ const Chart = () => {
 
             </View>
 
-        </View >
+        </SafeAreaView >
     )
 }
 

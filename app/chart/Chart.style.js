@@ -1,50 +1,42 @@
-import { Dimensions, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
+import { paddingValue, BtnSelectedBgColor, BtnUnselectedBgColor, stylesList } from "../../utils/Styles";
+
+
+
 
 const styles = StyleSheet.create({
 
     container: {
-        alignContent: "center",
-
+        ...stylesList.Container,
     },
 
 
     PickDatChartContainer: {
-        margin: 15,
-        backgroundColor: "#fff",
-        borderRadius: 30,
-
-
+        ...stylesList.ElementContainer,
     },
+
 
     PeriodContainer: {
         flexDirection: "row",
-        justifyContent: "space-between",
-        marginTop: 5,
-        marginBottom: 5,
-        marginLeft: 10,
-        marginRight: 10,
+        gap: 10,
+        marginTop: 20,
+        padding: paddingValue,
     },
 
 
     PeriodBtn: (PeriodPicked, Period) => ({
-        backgroundColor: PeriodPicked == Period ? "#f6dcfc" : "#fff",
-        paddingTop: 10,
-        paddingBottom: 10,
-        paddingLeft: 5,
-        paddingRight: 5,
-        width: 110,
-        borderWidth: 1,
-        borderColor: "#cac8cc",
-        // borderRadius: 10,
-        justifyContent: "center",
-        marginTop: 20,
+
+        ...stylesList.Btn('non'),
+        backgroundColor: PeriodPicked == Period ? BtnSelectedBgColor : BtnUnselectedBgColor,
+        flex: 1,
 
     }),
 
 
     periodText: {
+        ...stylesList.font,
         textAlign: "center",
-        fontSize: 15,
+        fontSize: 14,
         fontWeight: "bold",
     },
 
@@ -52,14 +44,8 @@ const styles = StyleSheet.create({
 
     dropdownPickerContainer: {
 
-        justifyContent: "center",
-        alignItems: "center",
-        marginLeft: 15,
-        marginRight: 15,
+        padding: paddingValue,
         zIndex: 1,
-        color: '#a8a8a8',
-        marginTop: 20,
-        marginBottom: 20,
 
     }
 

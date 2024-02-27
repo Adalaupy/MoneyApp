@@ -1,60 +1,73 @@
 import { StyleSheet } from "react-native";
+import { stylesList, shadow, paddingValue } from "../../utils/Styles";
 
 const styles = StyleSheet.create({
 
-
-
+    txtRemind: {
+        ...stylesList.font,
+        fontSize: 12,
+        marginLeft: 20,
+        paddingLeft: paddingValue,
+    },
 
 
     EventDateContainer: {
-        flexDirection: 'column',
-        width: '100%',
-        padding: 15,
-        backgroundColor: '#fff',
-        borderRadius: 20,
-        marginTop: 10,
+        ...stylesList.ElementContainer,
+        ...shadow,
+        borderWidth: 0,
     },
-
 
 
     EventsContainer: {
         flexDirection: 'column',
         alignItems: 'center',
-
     },
 
+
+
     eventDate: {
+
+        ...stylesList.font,
         fontSize: 17,
-        fontWeight: 'bold',
         marginBottom: 10,
 
     },
+
+
+    EventContainer: {
+        width: 340,
+        flexDirection: 'row',
+        alignItems: 'center',
+
+    },
+
 
     EventItem: {
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
-        width: 340,
         marginTop: 5,
     },
 
 
 
     eventText_Cate: {
-        flex: 3,
+        flex: 4,
     },
 
 
     eventText_Icon: {
-        flex: 1,
-
+        // flex: 1,
     },
 
     eventText_Amt: (amt_type) => ({
+        ...stylesList.font,
         color: amt_type == 1 ? 'red' : 'green',
         flex: 2,
         textAlign: 'right',
     }),
+
+
 
     eventText_Note: {
         flex: 3,

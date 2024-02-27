@@ -24,7 +24,7 @@ const ContentPage = () => {
 
                     <TouchableOpacity
                         keyExtractor={(item) => item.id}
-                        style={styles.textline}
+                        style={styles.Btn}
                         onPress={() => {
                             setIsContent(false)
                             setCurrentScreen(item.id)

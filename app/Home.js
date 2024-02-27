@@ -9,15 +9,46 @@ import { useStateContext } from "../contexts/ContextProvider"
 import { View, SafeAreaView, TouchableOpacity } from "react-native"
 import { Stack } from "expo-router";
 import Icon from "react-native-vector-icons/FontAwesome"
-
-
-
-
+import { Main_FuncList } from "../utils/HandleEvent"
+import { useEffect, useState } from "react"
 
 
 const Home = () => {
 
-    const { currentScreen, isContent, setIsContent } = useStateContext()
+    const { currentScreen, isContent, setIsContent, moneyRecord } = useStateContext()
+    const { handleScheduleToRecord } = Main_FuncList()
+    const [timeInterval, settimeInterval] = useState(1)
+
+
+    useEffect(() => {
+
+        const IntervalTime = 3000
+
+        const Interval = setInterval(() => {
+
+            settimeInterval(PrevTime => PrevTime + 1)
+
+        }, IntervalTime);
+
+        return () => clearInterval(Interval)
+
+    }, [])
+
+
+
+    useEffect(() => {
+
+        const BaseRecord = [...moneyRecord]
+
+        handleScheduleToRecord(BaseRecord)
+
+
+    }, [timeInterval]);
+
+
+
+
+
 
 
     const DisplayContent = () => {

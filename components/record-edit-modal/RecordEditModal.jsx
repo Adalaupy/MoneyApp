@@ -1,25 +1,38 @@
 import { TouchableOpacity, View, Text, TextInput, Modal, ScrollView, KeyboardAvoidingView, Platform } from "react-native"
-import styles from "./InputModal.style"
+import styles from "./RecordEditModal.style"
 import { useStateContext } from "../../contexts/ContextProvider"
 import { Main_FuncList } from "../../utils/HandleEvent"
 import CategoryListModal from "../category-list-modal/CategoryListModal"
+import DateTimePicker from '@react-native-community/datetimepicker';
+import MaterialIcons from "react-native-vector-icons/MaterialIcons"
 
-const InputModal = () => {
+
+const RecordEditModal = () => {
 
     const {
-        moneyRecord,
+
+        inputClickDay, setInputClickDay,
         InputSelectCate, setInputSelectCate,
         InputSelectCateIcon, setInputSelectCateIcon,
         InputSelectType, setInputSelectType,
         noteInput, setNoteInput,
         amtInput, setamtInput,
-        isInputModal,
+        isRecordEditModal, setIsRecordEditModal,
         setisCategoryListModal,
+        setRecordUpdate,
 
     } = useStateContext()
 
 
-    const { Handle_Input_Cancel, handle_Input_Submit } = Main_FuncList()
+    const { Handle_Input_Cancel, handle_Input_Update } = Main_FuncList()
+
+
+
+    const setDate = (event, selectedDate) => {
+
+        setInputClickDay((new Date(selectedDate)).toLocaleDateString('fr-CA'))
+
+    }
 
 
 
@@ -28,11 +41,17 @@ const InputModal = () => {
 
 
         <Modal
-            visible={isInputModal}
+            visible={isRecordEditModal}
             animationType="fade"
         >
 
             <ScrollView contentContainerStyle={styles.container}>
+
+
+                <View style={styles.DatePickerContainer}>
+                    <MaterialIcons name='edit-calendar' size={30} />
+                    <DateTimePicker value={new Date(inputClickDay)} onChange={setDate} mode="date" />
+                </View>
 
 
                 {/* Type */}
@@ -123,6 +142,8 @@ const InputModal = () => {
                     <TouchableOpacity
                         onPress={() => {
                             Handle_Input_Cancel()
+                            setRecordUpdate([])
+                            setIsRecordEditModal(false)
                         }}
                         style={styles.InputBtn}
                     >
@@ -131,11 +152,11 @@ const InputModal = () => {
 
                     <TouchableOpacity
                         onPress={() => {
-                            handle_Input_Submit('insert', null, moneyRecord)
+                            handle_Input_Update()
                         }}
                         style={styles.InputBtn}
                     >
-                        <Text style={styles.InputText}>Submit</Text>
+                        <Text style={styles.InputText}>Update</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -148,4 +169,4 @@ const InputModal = () => {
 }
 
 
-export default InputModal
+export default RecordEditModal

@@ -1,13 +1,14 @@
-import { Dimensions, StyleSheet } from "react-native";
-
+import { StyleSheet } from "react-native";
+import { WinHeight, stylesList } from "../../utils/Styles";
 
 const styles = StyleSheet.create({
 
     container: {
-        backgroundColor: "#8f8c8c",
-        flex: 1,
-        marginTop: Dimensions.get('window').height * 0.4,
-        marginBottom: Dimensions.get('window').height * 0.4,
+
+        ...stylesList.ModalContainer,
+
+        marginTop: WinHeight * 0.4,
+        marginBottom: WinHeight * 0.4,
         margin: 30,
         borderRadius: 20,
         alignItems: 'center',
@@ -30,31 +31,24 @@ const styles = StyleSheet.create({
 
 
     btnContainer: {
-
         flexDirection: "row",
-        gap: 20,
-
-
+        gap: 30,
     },
+
+
 
     btn: {
-        padding: 10,
+        ...stylesList.Btn('modal'),
         width: 100,
-        justifyContent: "center",
-        alignItems: "center",
-        borderRadius: 20,
-        borderWidth: 2,
-        borderColor: "white",
-
-
     },
 
-    btnText: {
 
+
+    btnText: {
+        ...stylesList.font,
         color: "white",
         fontWeight: "bold",
-        letterSpacing: 1,
-        fontSize: 13,
+        fontSize: 18,
     }
 
 

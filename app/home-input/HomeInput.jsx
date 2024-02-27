@@ -1,4 +1,4 @@
-import { View } from "react-native"
+import { SafeAreaView, View } from "react-native"
 import CalendarComponent from '../../components/calendar/Calendar'
 import InputModal from '../../components/input-modal/InputModal'
 import styles from './HomeInput.style'
@@ -8,10 +8,15 @@ const HomeInput = () => {
 
     return (
 
-        <View style={styles.container}>
-            <CalendarComponent />
+        <SafeAreaView style={styles.container}>
+            <View style={styles.calendarContainer}>
+                <CalendarComponent />
+            </View>
+
             <InputModal />
-        </View>
+
+
+        </SafeAreaView>
     )
 }
 

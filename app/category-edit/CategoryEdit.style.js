@@ -1,59 +1,50 @@
-import { Dimensions, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
+import { WinHeight, stylesList } from "../../utils/Styles";
+
 
 const styles = StyleSheet.create({
 
 
     container: {
-        margin: 5,
-
-        alignItems: 'center',
+        ...stylesList.Container,
     },
 
 
     cate_container: {
-        backgroundColor: 'white',
-        marginTop: 10,
-        marginBottom: 0,
-        width: '95%',
-        borderRadius: 10,
-        paddingTop: 10,
-        paddingBottom: 10,
-        height: Dimensions.get('window').height / 2 - 70,
 
+        ...stylesList.ElementContainer,
+
+        height: WinHeight / 2 - 100,
 
     },
 
+
     CateTxt: {
-        fontSize: 25,
-        fontWeight: 'bold',
-        color: '#3a3b3a',
+        ...stylesList.font,
+        fontSize: 22,
         textAlign: 'center',
         marginBottom: 15,
     },
 
 
     flatlist: {
-        gap: 10,
+        gap: 20,
         alignItems: 'center',
-
     },
 
+
+
     iconContainer: {
-        padding: 10,
-        borderRadius: 40,
-
-        marginLeft: 5,
-        marginRight: 5,
-
-        justifyContent: 'center',
-        alignItems: 'center',
+        ...stylesList.Btn('non'),
         width: 80,
-        backgroundColor: "rgb(235, 232, 237)"
+        height: 80,
+        margin: 12,
     },
 
 
     currIconBtn: (isActive) => ({
-        backgroundColor: isActive ? "rgb(213, 245, 211)" : "white",
+
+        backgroundColor: isActive ? "rgb(213, 245, 211)" : "",
         flexDirection: 'row',
         alignItems: 'center',
         marginTop: 2,

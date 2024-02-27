@@ -30,7 +30,7 @@ const CategoryEdit = () => {
                 <FlatList
                     contentContainerStyle={styles.flatlist}
                     data={CategoryIconList}
-                    numColumns={4}
+                    numColumns={3}
                     renderItem={({ item, index }) => (
 
                         <TouchableOpacity

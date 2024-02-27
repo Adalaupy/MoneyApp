@@ -1,10 +1,16 @@
 import { StyleSheet } from "react-native";
+import { stylesList } from "../../utils/Styles";
 
 const styles = StyleSheet.create({
 
 
     container: {
-        padding: 10,
+        ...stylesList.Container,
+
+    },
+
+    calendarContainer: {
+        ...stylesList.ElementContainer,
     }
 
 

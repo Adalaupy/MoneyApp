@@ -9,11 +9,12 @@ const PieChartElem = ({ PieChartData }) => {
 
     return (
 
-        <View>
+        <View >
 
 
 
             {PieChartData.length > 0 && (
+
                 <PieChart
                     data={PieChartData}
                     width={Dimensions.get('window').width}
@@ -24,9 +25,8 @@ const PieChartElem = ({ PieChartData }) => {
                         color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
                         strokeWidth: 2,
                         propsForLabels: {
-                            fontSize: 15,
+                            fontSize: 12,
                             fontWeight: "bold"
-
                         }
                     }}
                     accessor={"Accum_Amt"}

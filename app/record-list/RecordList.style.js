@@ -1,18 +1,20 @@
 import { StyleSheet } from "react-native";
+import { stylesList } from "../../utils/Styles";
+
 
 const styles = StyleSheet.create({
 
 
     container: {
 
-        alignItems: 'center',
+        ...stylesList.Container,
 
     },
 
 
     datepickContainer: {
-        marginBottom: 10,
-        marginTop: 10,
+
+        ...stylesList.ElementContainer,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
@@ -20,6 +22,7 @@ const styles = StyleSheet.create({
 
 
     datepickText: {
+        ...stylesList.font,
         fontSize: 15,
         fontWeight: 'bold',
 

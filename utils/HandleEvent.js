@@ -1,6 +1,5 @@
 import { useStateContext } from "../contexts/ContextProvider"
 
-
 export const Main_FuncList = () => {
 
 
@@ -8,8 +7,8 @@ export const Main_FuncList = () => {
 
         inputClickDay, setInputClickDay,
         InputSelectCate, setInputSelectCate,
-        InputSelectCateIcon, setInputSelectCateIcon,
-        InputSelectType, setInputSelectType,
+        InputSelectCateIcon,
+        InputSelectType, setInputSelectType, setInputSelectCateIcon,
         noteInput, setNoteInput,
         amtInput, setamtInput,
         moneyRecord, setMoneyRecord,
@@ -20,7 +19,18 @@ export const Main_FuncList = () => {
         setNewCateName,
         catEditType, setCatEditType,
         setCurrentScreen,
-        setChartPickDate,
+        ScheduleList, setScheduleList,
+        ScheduleItem, setScheduleItem,
+        SchedulePeriod, setSchedulePeriod,
+        ScheduleEvery, setScheduleEvery,
+        ScheduleType, setScheduleType,
+        ScheduleCate, setScheduleCate,
+        ScheduleCateIcon, setScheduleCateIcon,
+        ScheduleNoteInput, setScheduleNoteInput,
+        ScheduleAmountInput, setScheduleAmountInput,
+        setisScheduleModal, setIsRecordEditModal,
+        RecordUpdate, setRecordUpdate
+
 
     } = useStateContext()
 
@@ -142,43 +152,172 @@ export const Main_FuncList = () => {
 
 
     // ===============================================================================================================================================================
-    // Submit the record of input modal
+    // Insert New Record to the Money Record List (Function)
     // ===============================================================================================================================================================
 
-    const handle_Input_Submit = () => {
-
-        let NewMoneyRecord = [...moneyRecord]
-        const FindExist = NewMoneyRecord.find((item) => item.date == inputClickDay)
+    const InsertNewRecord = (Date, NewEventRecord, OriginalList) => {
 
 
-        const ThisEvent = {
-            category: InputSelectCate,
-            icon: InputSelectCateIcon,
-            amount: parseFloat(amtInput),
-            note: noteInput,
-            Type: InputSelectType == "Income" ? 2 : 1,
-            LogTime: new Date().toLocaleString()
-        }
+        let NewMoneyRecord = [...OriginalList]
+        let FindExist = NewMoneyRecord.filter((item) => item.date == Date)
 
 
 
-        if (FindExist) {
+        if (FindExist.length > 0) {
 
-            FindExist.event.push(ThisEvent)
+
+            NewMoneyRecord = NewMoneyRecord.map((item) => {
+
+                if (item.date == Date) {
+
+                    item.event.push(NewEventRecord)
+
+                }
+
+                return item
+            })
+
+
 
         } else {
 
             const NewItem = {
-                date: inputClickDay,
-                event: [ThisEvent]
+                date: Date,
+                event: [NewEventRecord]
             }
 
             NewMoneyRecord.push(NewItem)
         }
 
-        setCurrentScreen(3)
+
+
         setMoneyRecord(NewMoneyRecord)
         Handle_Input_Cancel()
+
+
+    }
+
+
+
+
+
+    // ===============================================================================================================================================================
+    // Submit the record of input modal
+    // ===============================================================================================================================================================
+
+    const handle_Input_Submit = (mode, newRecord, BaseRecord) => {
+
+
+
+        let ThisEvent
+        let OriginalList = BaseRecord
+        let inputDate = inputClickDay
+
+
+
+        if (mode == "schedule") {
+
+            ThisEvent = newRecord
+            inputDate = Today
+
+        } else {
+
+            ThisEvent = {
+                category: InputSelectCate,
+                icon: InputSelectCateIcon,
+                amount: parseFloat(amtInput),
+                note: noteInput,
+                Type: InputSelectType == "Income" ? 2 : 1,
+                LogTime: new Date().toLocaleString()
+            }
+
+        }
+
+
+
+
+        InsertNewRecord(inputDate, ThisEvent, OriginalList)
+
+
+
+        if (mode == "update" || mode == "insert") {
+
+            setCurrentScreen(3)
+
+        }
+
+
+    }
+
+    // ===============================================================================================================================================================
+    // Delete the record of Record edit modal
+    // ===============================================================================================================================================================
+
+    const handle_Input_Delete = (date, Record) => {
+
+        let NewRecordList = [...moneyRecord]
+
+        NewRecordList = NewRecordList.map((item) => {
+
+            if (item.date == date) {
+
+                item.event = item.event.filter((eventItem) => eventItem != Record)
+
+            }
+
+            return item
+
+        }).filter((item) => {
+
+            return item.event.length > 0
+
+        })
+
+        setMoneyRecord(NewRecordList)
+
+
+    }
+
+
+
+
+
+    // ===============================================================================================================================================================
+    // Update the record of Record edit modal
+    // ===============================================================================================================================================================
+
+    const handle_Input_Update = () => {
+
+
+
+        const [record, date] = RecordUpdate
+
+        let NewRecordList = [...moneyRecord]
+
+
+
+        // Delete the original record
+        NewRecordList = NewRecordList.map((item) => {
+
+            if (item.date == date) {
+
+                item.event = item.event.filter((eventItem) => eventItem != record)
+
+            }
+
+            return item
+
+        }).filter((item) => {
+
+            return item.event.length > 0
+
+        })
+
+
+
+        handle_Input_Submit('update', null, NewRecordList)
+        setRecordUpdate([])
+        setIsRecordEditModal(false)
 
 
     }
@@ -222,10 +361,6 @@ export const Main_FuncList = () => {
 
 
 
-
-
-
-
     // ===============================================================================================================================================================
     // Filter the money record by date
     // ===============================================================================================================================================================
@@ -235,6 +370,7 @@ export const Main_FuncList = () => {
         let NewMoneyRecord = [...moneyRecord]
 
         NewMoneyRecord = NewMoneyRecord.filter(item => Date.parse(item.date) <= Date.parse(datePicked))
+
 
         return NewMoneyRecord
 
@@ -439,10 +575,200 @@ export const Main_FuncList = () => {
 
         return DateList
 
+    }
+
+    // ===============================================================================================================================================================
+    // Cancel the Schedule Modal and reset all variables
+    // ===============================================================================================================================================================
+
+    const handle_Schedule_Cancel = () => {
+
+        setScheduleItem("")
+        setSchedulePeriod("Daily")
+        setScheduleEvery([])
+        setScheduleType('Expense')
+        setScheduleCate(InputSelectCate)
+        setScheduleCateIcon(InputSelectCateIcon)
+        setScheduleNoteInput("")
+        setScheduleAmountInput("")
+        setisScheduleModal(false)
+    }
+
+
+
+    // ===============================================================================================================================================================
+    // Add New Schedule Item
+    // ===============================================================================================================================================================
+
+    const handle_Schedule_Submit = () => {
+
+        let NewScheduleRecord = [...ScheduleList]
+
+
+        const thisItem = {
+            item: ScheduleItem,
+            period: SchedulePeriod,
+            every: ScheduleEvery,
+            type: ScheduleType,
+            category: ScheduleCate,
+            Icon: ScheduleCateIcon,
+            note: ScheduleNoteInput,
+            amount: ScheduleAmountInput,
+            isActive: true
+        }
+
+        NewScheduleRecord.push(thisItem)
+
+        setScheduleList(NewScheduleRecord)
+        setisScheduleModal(false)
+        handle_Schedule_Cancel()
 
     }
 
 
+
+
+    // ===============================================================================================================================================================
+    // Schedule to Record
+    // ===============================================================================================================================================================
+
+    const handleScheduleItem = (ScheduleDataItem, BaseRecord) => {
+
+        const { item, period, every, type, category, Icon, note, amount } = ScheduleDataItem
+
+        const CurrentDateTime = new Date()
+        const CurrentDay = CurrentDateTime.getDate()
+        const CurrentWeekDay = CurrentDateTime.getDay()
+        const CurrentMonth = CurrentDateTime.getMonth() + 1
+        const CurrentYear = CurrentDateTime.getFullYear()
+        const CurrentHour = CurrentDateTime.getHours()
+        const CurrentMinute = CurrentDateTime.getMinutes()
+
+
+        let isMeet = false
+
+
+        if (period == "Daily") {
+
+            Current = [CurrentHour, CurrentMinute]
+
+        } else if (period == "Weekly") {
+
+            Current = [CurrentWeekDay, CurrentHour, CurrentMinute]
+
+        } else if (period == "Monthly") {
+
+            Current = [CurrentDay, CurrentHour, CurrentMinute]
+
+        } else if (period == "Yearly") {
+
+            Current = [CurrentDay, CurrentMonth, CurrentHour, CurrentMinute]
+
+        } else if (period == "Adhoc") {
+
+            Current = [CurrentDay, CurrentMonth, CurrentYear, CurrentHour, CurrentMinute]
+
+        }
+
+
+        if (Current = every) {
+
+            isMeet = true
+
+            if (period == "Adhoc") {
+
+                const NewScheduleList = ScheduleList.map((item) => {
+
+                    if (item == ScheduleDataItem) {
+
+                        item.isActive = false
+                    }
+
+                    return item
+                })
+
+                setScheduleList(NewScheduleList)
+            }
+
+        }
+
+
+
+        if (isMeet) {
+
+
+            let typeInt = type == "Expense" ? 1 : 2
+            let noteItem = note + (item != "" ? "\n (" + item + ") " : "")
+
+            const NewEventRecord = {
+                category: category,
+                icon: Icon,
+                amount: amount,
+                note: noteItem,
+                Type: typeInt,
+                LogTime: new Date().toLocaleString()
+            }
+
+
+
+
+
+            const thisDayRecord = moneyRecord.filter(item => item.date == Today)
+            let searchExist
+
+
+
+            if (thisDayRecord.length != 0) {
+
+                searchExist = thisDayRecord[0].event.filter(eventItem => eventItem.category == category && eventItem.note == noteItem && eventItem.amount == amount.toString() && eventItem.Type == typeInt && eventItem.icon == Icon)
+            }
+
+            else {
+
+                searchExist = []
+            }
+
+
+
+            if (searchExist.length == 0) {
+
+
+
+                handle_Input_Submit('schedule', NewEventRecord, BaseRecord)
+
+            }
+
+        }
+
+
+
+    }
+
+
+
+    const handleScheduleToRecord = (BaseRecord) => {
+
+        let NewScheduleList = [...ScheduleList]
+        let Now = new Date()
+
+
+        NewScheduleList = NewScheduleList.filter((item) => item.isActive == true)
+
+
+        NewScheduleList.map((item) => {
+
+            let ScheduleTime = item.every
+
+            if (ScheduleTime[ScheduleTime.length - 2] == Now.getHours() & ScheduleTime[ScheduleTime.length - 1] == Now.getMinutes()) {
+
+                handleScheduleItem(item, BaseRecord)
+
+            }
+
+        })
+
+
+    }
 
     // ===============================================================================================================================================================
     // Return Functions
@@ -453,11 +779,17 @@ export const Main_FuncList = () => {
         handleMarkedDate,
         Handle_Input_Cancel,
         handle_Input_Submit,
+        handle_Input_Delete,
+        handle_Input_Update,
         handle_Active_Category,
         handleNewCategoryName,
         handleDatePickerFilter,
         handlePieChartData,
-        handleListDate
+        handleListDate,
+        handle_Schedule_Cancel,
+        handle_Schedule_Submit,
+
+        handleScheduleToRecord,
 
     }
 }

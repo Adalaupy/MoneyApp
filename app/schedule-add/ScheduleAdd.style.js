@@ -1,72 +1,98 @@
 import { StyleSheet } from 'react-native';
-
+import { stylesList, paddingValue } from '../../utils/Styles';
 
 const styles = StyleSheet.create({
 
-    ItemContainer: {
-        flexDirection: 'row',
-        backgroundColor: 'white',
-        justifyContent: 'space-between',
-        marginTop: 10,
-        padding: 20,
-        paddingBottom: 20,
-        paddingTop: 20,
+
+    container: {
+        ...stylesList.Container,
+        height: "100%",
     },
+
+
+    AddJobContainer: {
+
+        backgroundColor: '#7bb88b',
+        padding: paddingValue,
+        marginTop: 10,
+        width: '90%',
+    },
+
+
+    AddJobText: {
+        ...stylesList.font,
+        color: "#fff",
+        fontSize: 15,
+        textAlign: 'center',
+    },
+
+
+
+    ItemContainer: {
+        ...stylesList.ElementContainer,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginBottom: 0,
+    },
+
+
 
 
     ItemLogoContainer: {
         flexDirection: 'row',
-        gap: 20,
+        flex: 1,
+        gap: 10,
         alignItems: 'center',
-        justifyContent: "space-between",
 
     },
+
+
 
     scheduleInfoContainer: {
-        gap: 15,
+        flex: 1,
+        gap: 10,
+
     },
-
-
-    ItemTitle: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: 20,
-    },
-
 
 
     TitleText: {
-        fontSize: 18,
+        ...stylesList.font,
+        fontSize: 17,
         fontWeight: 500,
     },
 
 
 
+
     scheduleContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        flexDirection: 'column',
+        alignItems: 'flex-end',
         gap: 10,
     },
 
-    scheduleText: {
 
+
+    scheduleText: {
+        ...stylesList.font,
         fontSize: 13,
         color: '#8f8f8f',
 
-
     },
 
+
+
     amount: (type) => ({
+        ...stylesList.font,
         fontSize: 18,
         fontWeight: 600,
         color: type == "Income" ? "green" : "red",
+
     }),
 
 
 
     amountContainer: {
         alignItems: 'flex-end',
-
     },
 
 

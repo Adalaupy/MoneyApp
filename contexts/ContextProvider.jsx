@@ -11,6 +11,7 @@ const StateContext = createContext()
 
 export const ContextProvider = ({ children }) => {
 
+    const defaultScreenNum = 4
 
     const ContentPageItem = [
         { id: 1, text: "Input" },
@@ -31,9 +32,11 @@ export const ContextProvider = ({ children }) => {
     // Model + Swich Screen
     const [isContent, setIsContent] = useState(false)
     const [isInputModal, setIsInputModal] = useState(false)
-    const [currentScreen, setCurrentScreen] = useState(4)
+    const [isRecordEditModal, setIsRecordEditModal] = useState(false)
+    const [currentScreen, setCurrentScreen] = useState(defaultScreenNum)
     const [isAddCateModal, setIsAddCateModal] = useState(false)
     const [isScheduleModal, setisScheduleModal] = useState(false)
+    const [isCategoryListModal, setisCategoryListModal] = useState(false)
 
 
 
@@ -55,9 +58,13 @@ export const ContextProvider = ({ children }) => {
     const [inputClickDay, setInputClickDay] = useState(Today)
     const [InputSelectType, setInputSelectType] = useState('Expense')
     const [InputSelectCate, setInputSelectCate] = useState(CategoryList.find(item => item.isActive == true).name)
-    const [InputSelectCateIcon, setInputSelectCateIcon] = useState(null)
+    const [InputSelectCateIcon, setInputSelectCateIcon] = useState(CategoryList.find(item => item.isActive == true).Icon_elem)
     const [noteInput, setNoteInput] = useState('')
     const [amtInput, setamtInput] = useState('')
+
+
+    // Store Edit Record
+    const [RecordUpdate, setRecordUpdate] = useState([])
 
 
 
@@ -74,14 +81,14 @@ export const ContextProvider = ({ children }) => {
 
     // Schedule Data
     const [ScheduleList, setScheduleList] = useState(ScheduleData)
-    const [ScheduleItem, setScheduleItem] = useState(null)
-    const [SchedulePeriod, setSchedulePeriod] = useState(null)
+    const [ScheduleItem, setScheduleItem] = useState("")
+    const [SchedulePeriod, setSchedulePeriod] = useState("Daily")
     const [ScheduleEvery, setScheduleEvery] = useState([])
-    const [ScheduleType, setScheduleType] = useState(null)
-    const [ScheduleCate, setScheduleCate] = useState(null)
-    const [ScheduleCateIcon, setScheduleCateIcon] = useState(null)
-    const [ScheduleNoteInput, setScheduleNoteInput] = useState(null)
-    const [ScheduleAmountInput, setScheduleAmountInput] = useState(null)
+    const [ScheduleType, setScheduleType] = useState('Expense')
+    const [ScheduleCate, setScheduleCate] = useState(InputSelectCate)
+    const [ScheduleCateIcon, setScheduleCateIcon] = useState(InputSelectCateIcon)
+    const [ScheduleNoteInput, setScheduleNoteInput] = useState("")
+    const [ScheduleAmountInput, setScheduleAmountInput] = useState("")
 
 
 
@@ -105,10 +112,11 @@ export const ContextProvider = ({ children }) => {
 
                 isContent, setIsContent,
                 isInputModal, setIsInputModal,
+                isRecordEditModal, setIsRecordEditModal,
                 currentScreen, setCurrentScreen,
                 isAddCateModal, setIsAddCateModal,
                 isScheduleModal, setisScheduleModal,
-
+                isCategoryListModal, setisCategoryListModal,
 
                 inputClickDay, setInputClickDay,
                 InputSelectType, setInputSelectType,
@@ -116,6 +124,10 @@ export const ContextProvider = ({ children }) => {
                 InputSelectCateIcon, setInputSelectCateIcon,
                 noteInput, setNoteInput,
                 amtInput, setamtInput,
+
+
+                RecordUpdate, setRecordUpdate,
+
 
                 selectedNewIcon, setselectedNewIcon,
                 newCateName, setNewCateName,

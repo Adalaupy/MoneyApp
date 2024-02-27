@@ -14,6 +14,13 @@ const styles = StyleSheet.create({
     },
 
 
+    DatePickerContainer: {
+        ...stylesList.ElementContainer,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
 
     TypeContainer: {
         ...stylesList.ElementContainer,

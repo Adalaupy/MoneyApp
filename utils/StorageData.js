@@ -7,37 +7,38 @@ import FontAwesome6 from "react-native-vector-icons/FontAwesome6"
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5"
 import AntDesign from "react-native-vector-icons/AntDesign"
 import Feather from "react-native-vector-icons/Feather"
+import { IconColor } from './Styles'
 
-
+export const AlertAmt = 190
 
 export const CategoryIconList = [
 
-    <FontAwesome name='money' color="#fa487b" size={30} />,
-    <MaterialCommunityIcons name='face-woman' color="#fa487b" size={30} />,
-    <FontAwesome6 name='hands-holding-child' color="#fa487b" size={30} />,
-    <MaterialIcons name='elderly' color="#fa487b" size={30} />,
-    <FontAwesome5 name='parking' color="#fa487b" size={30} />,
-    <MaterialIcons name='pets' color="#fa487b" size={30} />,
-    <FontAwesome5 name='gift' color="#fa487b" size={30} />,
-    <MaterialCommunityIcons name='charity' color="#fa487b" size={30} />,
-    <FontAwesome5 name='mobile-alt' color="#fa487b" size={30} />,
-    <MaterialIcons name='sports-gymnastics' color="#fa487b" size={30} />,
-    <MaterialCommunityIcons name='hair-dryer-outline' color="#fa487b" size={30} />,
-    <FontAwesome5 name='baby' color="#fa487b" size={30} />,
-    <MaterialCommunityIcons name='lipstick' color="#fa487b" size={30} />,
-    <MaterialIcons name='computer' color="#fa487b" size={30} />,
-    <AntDesign name='API' color="#fa487b" size={30} />,
-    <AntDesign name='wifi' color="#fa487b" size={30} />,
-    <Entypo name='aircraft' color="#fa487b" size={30} />,
-    <Entypo name='camera' color="#fa487b" size={30} />,
-    <Feather name='truck' color="#fa487b" size={30} />,
-    <FontAwesome name='music' color="#fa487b" size={30} />,
-    <FontAwesome name='building-o' color="#fa487b" size={30} />,
-    <FontAwesome name='graduation-cap' color="#fa487b" size={30} />,
-    <FontAwesome name='car' color="#fa487b" size={30} />,
-    <FontAwesome name='server' color="#fa487b" size={30} />,
-    <FontAwesome5 name='baseball-ball' color="#fa487b" size={30} />,
-    <FontAwesome5 name='dumbbell' color="#fa487b" size={30} />,
+    <FontAwesome name='money' color={IconColor} size={30} />,
+    <MaterialCommunityIcons name='face-woman' color={IconColor} size={30} />,
+    <FontAwesome6 name='hands-holding-child' color={IconColor} size={30} />,
+    <MaterialIcons name='elderly' color={IconColor} size={30} />,
+    <FontAwesome5 name='parking' color={IconColor} size={30} />,
+    <MaterialIcons name='pets' color={IconColor} size={30} />,
+    <FontAwesome5 name='gift' color={IconColor} size={30} />,
+    <MaterialCommunityIcons name='charity' color={IconColor} size={30} />,
+    <FontAwesome5 name='mobile-alt' color={IconColor} size={30} />,
+    <MaterialIcons name='sports-gymnastics' color={IconColor} size={30} />,
+    <MaterialCommunityIcons name='hair-dryer-outline' color={IconColor} size={30} />,
+    <FontAwesome5 name='baby' color={IconColor} size={30} />,
+    <MaterialCommunityIcons name='lipstick' color={IconColor} size={30} />,
+    <MaterialIcons name='computer' color={IconColor} size={30} />,
+    <AntDesign name='API' color={IconColor} size={30} />,
+    <AntDesign name='wifi' color={IconColor} size={30} />,
+    <Entypo name='aircraft' color={IconColor} size={30} />,
+    <Entypo name='camera' color={IconColor} size={30} />,
+    <Feather name='truck' color={IconColor} size={30} />,
+    <FontAwesome name='music' color={IconColor} size={30} />,
+    <FontAwesome name='building-o' color={IconColor} size={30} />,
+    <FontAwesome name='graduation-cap' color={IconColor} size={30} />,
+    <FontAwesome name='car' color={IconColor} size={30} />,
+    <FontAwesome name='server' color={IconColor} size={30} />,
+    <FontAwesome5 name='baseball-ball' color={IconColor} size={30} />,
+    <FontAwesome5 name='dumbbell' color={IconColor} size={30} />,
 
 ]
 
@@ -49,73 +50,73 @@ export const CategoryDefault = [
     {
         "name": "Breakfast",
         "isActive": true,
-        "Icon_elem": <MaterialIcons name="free-breakfast" color="#fa487b" size={30} />
+        "Icon_elem": <MaterialIcons name="free-breakfast" color={IconColor} size={30} />
     },
     {
         "name": "Lunch",
         "isActive": true,
-        "Icon_elem": <Ionicons name="fast-food" color="#fa487b" size={30} />
+        "Icon_elem": <Ionicons name="fast-food" color={IconColor} size={30} />
     },
     {
         "name": "Dinner",
         "isActive": true,
-        "Icon_elem": <MaterialIcons name="dinner-dining" color="#fa487b" size={30} />
+        "Icon_elem": <MaterialIcons name="dinner-dining" color={IconColor} size={30} />
     },
     {
         "name": "Transportation",
         "isActive": true,
-        "Icon_elem": <MaterialIcons name="emoji-transportation" color="#fa487b" size={30} />
+        "Icon_elem": <MaterialIcons name="emoji-transportation" color={IconColor} size={30} />
     },
     {
         "name": "Drink",
         "isActive": true,
-        "Icon_elem": <Entypo name="drink" color="#fa487b" size={30} />
+        "Icon_elem": <Entypo name="drink" color={IconColor} size={30} />
     },
     {
         "name": "Snack",
         "isActive": true,
-        "Icon_elem": <MaterialCommunityIcons name="food-hot-dog" color="#fa487b" size={30} />
+        "Icon_elem": <MaterialCommunityIcons name="food-hot-dog" color={IconColor} size={30} />
     },
     {
         "name": "Housing",
         "isActive": true,
-        "Icon_elem": <FontAwesome6 name="house-chimney-window" color="#fa487b" size={30} />
+        "Icon_elem": <FontAwesome6 name="house-chimney-window" color={IconColor} size={30} />
     },
     {
         "name": "Daily Use",
         "isActive": true,
-        "Icon_elem": <FontAwesome name="shopping-cart" color="#fa487b" size={30} />
+        "Icon_elem": <FontAwesome name="shopping-cart" color={IconColor} size={30} />
     },
     {
         "name": "Entertainment",
         "isActive": true,
-        "Icon_elem": <FontAwesome name="gamepad" color="#fa487b" size={30} />
+        "Icon_elem": <FontAwesome name="gamepad" color={IconColor} size={30} />
     },
     {
         "name": "Shopping",
         "isActive": true,
-        "Icon_elem": <FontAwesome name="shopping-bag" color="#fa487b" size={30} />
+        "Icon_elem": <FontAwesome name="shopping-bag" color={IconColor} size={30} />
     },
 
     {
         "name": "Education",
         "isActive": false,
-        "Icon_elem": <Entypo name="open-book" color="#fa487b" size={30} />
+        "Icon_elem": <Entypo name="open-book" color={IconColor} size={30} />
     },
     {
         "name": "Utilities",
         "isActive": false,
-        "Icon_elem": <FontAwesome6 name="file-invoice-dollar" color="#fa487b" size={30} />
+        "Icon_elem": <FontAwesome6 name="file-invoice-dollar" color={IconColor} size={30} />
     },
     {
         "name": "Clothing",
         "isActive": false,
-        "Icon_elem": <Ionicons name="shirt-outline" color="#fa487b" size={30} />
+        "Icon_elem": <Ionicons name="shirt-outline" color={IconColor} size={30} />
     },
     {
         "name": "Medical",
         "isActive": false,
-        "Icon_elem": <FontAwesome6 name="suitcase-medical" color="#fa487b" size={30} />
+        "Icon_elem": <FontAwesome6 name="suitcase-medical" color={IconColor} size={30} />
     },
 
 ]
@@ -124,13 +125,7 @@ export const CategoryDefault = [
 
 
 
-export const AlertAmt = 190
 
-
-
-
-
-// For testing
 export const Init_Money = [
 
 
@@ -140,7 +135,7 @@ export const Init_Money = [
         event: [
             {
                 category: "Lunch",
-                icon: <Ionicons name="fast-food" color="#fa487b" size={30} />,
+                icon: <Ionicons name="fast-food" color={IconColor} size={30} />,
                 amount: 100,
                 note: "Breakfast",
                 Type: 1,
@@ -148,7 +143,7 @@ export const Init_Money = [
             },
             {
                 category: "Transportation",
-                icon: <MaterialIcons name="emoji-transportation" color="#fa487b" size={30} />,
+                icon: <MaterialIcons name="emoji-transportation" color={IconColor} size={30} />,
                 amount: 20,
                 note: "by bus",
                 Type: 1,
@@ -163,7 +158,7 @@ export const Init_Money = [
         event: [
             {
                 category: "Breakfast",
-                icon: <MaterialIcons name="free-breakfast" color="#fa487b" size={30} />,
+                icon: <MaterialIcons name="free-breakfast" color={IconColor} size={30} />,
                 amount: 200,
                 note: "Lunch",
                 Type: 1,
@@ -171,7 +166,7 @@ export const Init_Money = [
             },
             {
                 category: "Salary",
-                icon: <MaterialIcons name="attach-money" color="#fa487b" size={30} />,
+                icon: <MaterialIcons name="attach-money" color={IconColor} size={30} />,
                 amount: 200,
                 note: "Salary",
                 Type: 2,
@@ -183,14 +178,42 @@ export const Init_Money = [
 ]
 
 
+
+
+
 export const ScheduleData = [
+
+    {
+        item: "Breakfast",
+        period: "Daily",
+        every: [15, 42],
+        type: "Expense",
+        category: "Breakfast",
+        Icon: <MaterialIcons name="free-breakfast" color={IconColor} size={30} />,
+        note: "McDonald",
+        amount: 25,
+        isActive: true,
+    },
+
+    {
+        item: "Transportation",
+        period: "Daily",
+        every: [9, 0],
+        type: "Expense",
+        category: "Transportation",
+        Icon: <MaterialIcons name="emoji-transportation" color={IconColor} size={30} />,
+        note: "bus",
+        amount: 5,
+        isActive: true,
+    },
+
     {
         item: "Salary",
         period: "Monthly",
         every: [2, 23, 50],
         type: "Income",
         category: "Salary",
-        Icon: <MaterialIcons name="attach-money" color="#fa487b" size={30} />,
+        Icon: <MaterialIcons name="attach-money" color={IconColor} size={30} />,
         note: "5th of month, 23:50 PM",
         amount: 20000,
         isActive: true,
@@ -198,10 +221,10 @@ export const ScheduleData = [
     {
         item: "Master degree",
         period: "Yearly",
-        every: [5, 10, 23, 40],
+        every: [27, 2, 10, 4],
         type: "Expense",
         category: "Education",
-        Icon: <Entypo name="open-book" color="#fa487b" size={30} />,
+        Icon: <Entypo name="open-book" color={IconColor} size={30} />,
         note: "5th of October, 23:40 PM",
         amount: 5000,
         isActive: true,
@@ -209,21 +232,21 @@ export const ScheduleData = [
     {
         item: "Spotify",
         period: "Monthly",
-        every: [5, 0, 0],
+        every: [27, 10, 0],
         type: "Expense",
         category: "Music",
-        Icon: <FontAwesome name='music' color="#fa487b" size={30} />,
+        Icon: <FontAwesome name='music' color={IconColor} size={30} />,
         note: "5th of month, 00:00 AM",
         amount: 100,
         isActive: true,
     },
     {
         item: "Book Party Room",
-        period: "ad-hoc",
-        every: [1, 5, 11, 0],
+        period: "Adhoc",
+        every: [27, 2, 2024, 9, 47],
         type: "Expense",
         category: "Enterainment",
-        Icon: <FontAwesome name="gamepad" color="#fa487b" size={30} />,
+        Icon: <FontAwesome name="gamepad" color={IconColor} size={30} />,
         note: "1st of May, 11:00 AM",
         amount: 100,
         isActive: true,
@@ -231,17 +254,39 @@ export const ScheduleData = [
     {
         item: "Car rental",
         period: "Weekly",
-        every: [6, 11, 0],
+        every: [2, 10, 3],
         type: "Expense",
         category: "Transportation",
-        Icon: <MaterialIcons name="emoji-transportation" color="#fa487b" size={30} />,
+        Icon: <MaterialIcons name="emoji-transportation" color={IconColor} size={30} />,
         note: "test",
         amount: 200,
         isActive: true,
     },
 
-]
+    {
+        item: "Lunch",
+        period: "Daily",
+        every: [12, 4],
+        type: "Expense",
+        category: "Lunch",
+        Icon: <Ionicons name="fast-food" color={IconColor} size={30} />,
+        note: "McDonald",
+        amount: 45,
+        isActive: true,
+    },
+    {
+        item: "",
+        period: "Daily",
+        every: [9, 35],
+        type: "Expense",
+        category: "Utilities",
+        Icon: <FontAwesome6 name="file-invoice-dollar" color={IconColor} size={30} />,
+        note: "McDonald",
+        amount: 105,
+        isActive: true,
+    },
 
+]
 
 
 
