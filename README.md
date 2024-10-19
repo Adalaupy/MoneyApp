@@ -18,11 +18,11 @@ This is my first React Native Project (Expo) after I watched some tutorial from 
 # Installation
 1. Install the packages
 ```
-
+npm install
 ```
 2. run the program
 ```
-
+npx expo start
 ```
  
 
