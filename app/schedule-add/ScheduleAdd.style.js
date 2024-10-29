@@ -6,7 +6,6 @@ const styles = StyleSheet.create({
 
     container: {
         ...stylesList.Container,
-        height: "100%",
     },
 
 
