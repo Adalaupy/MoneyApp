@@ -47,36 +47,36 @@ export const CategoryIconList = [
 
 export const CategoryDefault = [
 
-    {
-        "name": "Breakfast",
-        "isActive": true,
-        "Icon_elem": <MaterialIcons name="free-breakfast" color={IconColor} size={30} />
-    },
-    {
-        "name": "Lunch",
-        "isActive": true,
-        "Icon_elem": <Ionicons name="fast-food" color={IconColor} size={30} />
-    },
-    {
-        "name": "Dinner",
-        "isActive": true,
-        "Icon_elem": <MaterialIcons name="dinner-dining" color={IconColor} size={30} />
-    },
-    {
-        "name": "Transportation",
-        "isActive": true,
-        "Icon_elem": <MaterialIcons name="emoji-transportation" color={IconColor} size={30} />
-    },
-    {
-        "name": "Drink",
-        "isActive": true,
-        "Icon_elem": <Entypo name="drink" color={IconColor} size={30} />
-    },
-    {
-        "name": "Snack",
-        "isActive": true,
-        "Icon_elem": <MaterialCommunityIcons name="food-hot-dog" color={IconColor} size={30} />
-    },
+    // {
+    //     "name": "Breakfast",
+    //     "isActive": true,
+    //     "Icon_elem": <MaterialIcons name="free-breakfast" color={IconColor} size={30} />
+    // },
+    // {
+    //     "name": "Lunch",
+    //     "isActive": true,
+    //     "Icon_elem": <Ionicons name="fast-food" color={IconColor} size={30} />
+    // },
+    // {
+    //     "name": "Dinner",
+    //     "isActive": true,
+    //     "Icon_elem": <MaterialIcons name="dinner-dining" color={IconColor} size={30} />
+    // },
+    // {
+    //     "name": "Transportation",
+    //     "isActive": true,
+    //     "Icon_elem": <MaterialIcons name="emoji-transportation" color={IconColor} size={30} />
+    // },
+    // {
+    //     "name": "Drink",
+    //     "isActive": true,
+    //     "Icon_elem": <Entypo name="drink" color={IconColor} size={30} />
+    // },
+    // {
+    //     "name": "Snack",
+    //     "isActive": true,
+    //     "Icon_elem": <MaterialCommunityIcons name="food-hot-dog" color={IconColor} size={30} />
+    // },
     {
         "name": "Housing",
         "isActive": true,
@@ -92,22 +92,22 @@ export const CategoryDefault = [
         "isActive": true,
         "Icon_elem": <FontAwesome name="gamepad" color={IconColor} size={30} />
     },
-    {
-        "name": "Shopping",
-        "isActive": true,
-        "Icon_elem": <FontAwesome name="shopping-bag" color={IconColor} size={30} />
-    },
+    // {
+    //     "name": "Shopping",
+    //     "isActive": true,
+    //     "Icon_elem": <FontAwesome name="shopping-bag" color={IconColor} size={30} />
+    // },
 
-    {
-        "name": "Education",
-        "isActive": false,
-        "Icon_elem": <Entypo name="open-book" color={IconColor} size={30} />
-    },
-    {
-        "name": "Utilities",
-        "isActive": false,
-        "Icon_elem": <FontAwesome6 name="file-invoice-dollar" color={IconColor} size={30} />
-    },
+    // {
+    //     "name": "Education",
+    //     "isActive": false,
+    //     "Icon_elem": <Entypo name="open-book" color={IconColor} size={30} />
+    // },
+    // {
+    //     "name": "Utilities",
+    //     "isActive": false,
+    //     "Icon_elem": <FontAwesome6 name="file-invoice-dollar" color={IconColor} size={30} />
+    // },
     {
         "name": "Clothing",
         "isActive": false,
@@ -183,108 +183,108 @@ export const Init_Money = [
 
 export const ScheduleData = [
 
-    {
-        item: "Breakfast",
-        period: "Daily",
-        every: [15, 42],
-        type: "Expense",
-        category: "Breakfast",
-        Icon: <MaterialIcons name="free-breakfast" color={IconColor} size={30} />,
-        note: "McDonald",
-        amount: 25,
-        isActive: true,
-    },
+    // {
+    //     item: "Breakfast",
+    //     period: "Daily",
+    //     every: [15, 42],
+    //     type: "Expense",
+    //     category: "Breakfast",
+    //     Icon: <MaterialIcons name="free-breakfast" color={IconColor} size={30} />,
+    //     note: "McDonald",
+    //     amount: 25,
+    //     isActive: true,
+    // },
 
-    {
-        item: "Transportation",
-        period: "Daily",
-        every: [9, 0],
-        type: "Expense",
-        category: "Transportation",
-        Icon: <MaterialIcons name="emoji-transportation" color={IconColor} size={30} />,
-        note: "bus",
-        amount: 5,
-        isActive: true,
-    },
+    // {
+    //     item: "Transportation",
+    //     period: "Daily",
+    //     every: [9, 0],
+    //     type: "Expense",
+    //     category: "Transportation",
+    //     Icon: <MaterialIcons name="emoji-transportation" color={IconColor} size={30} />,
+    //     note: "bus",
+    //     amount: 5,
+    //     isActive: true,
+    // },
 
-    {
-        item: "Salary",
-        period: "Monthly",
-        every: [2, 23, 50],
-        type: "Income",
-        category: "Salary",
-        Icon: <MaterialIcons name="attach-money" color={IconColor} size={30} />,
-        note: "5th of month, 23:50 PM",
-        amount: 20000,
-        isActive: true,
-    },
-    {
-        item: "Master degree",
-        period: "Yearly",
-        every: [27, 2, 10, 4],
-        type: "Expense",
-        category: "Education",
-        Icon: <Entypo name="open-book" color={IconColor} size={30} />,
-        note: "5th of October, 23:40 PM",
-        amount: 5000,
-        isActive: true,
-    },
-    {
-        item: "Spotify",
-        period: "Monthly",
-        every: [27, 10, 0],
-        type: "Expense",
-        category: "Music",
-        Icon: <FontAwesome name='music' color={IconColor} size={30} />,
-        note: "5th of month, 00:00 AM",
-        amount: 100,
-        isActive: true,
-    },
-    {
-        item: "Book Party Room",
-        period: "Adhoc",
-        every: [27, 2, 2024, 9, 47],
-        type: "Expense",
-        category: "Enterainment",
-        Icon: <FontAwesome name="gamepad" color={IconColor} size={30} />,
-        note: "1st of May, 11:00 AM",
-        amount: 100,
-        isActive: true,
-    },
-    {
-        item: "Car rental",
-        period: "Weekly",
-        every: [2, 10, 3],
-        type: "Expense",
-        category: "Transportation",
-        Icon: <MaterialIcons name="emoji-transportation" color={IconColor} size={30} />,
-        note: "test",
-        amount: 200,
-        isActive: true,
-    },
+    // {
+    //     item: "Salary",
+    //     period: "Monthly",
+    //     every: [2, 23, 50],
+    //     type: "Income",
+    //     category: "Salary",
+    //     Icon: <MaterialIcons name="attach-money" color={IconColor} size={30} />,
+    //     note: "5th of month, 23:50 PM",
+    //     amount: 20000,
+    //     isActive: true,
+    // },
+    // {
+    //     item: "Master degree",
+    //     period: "Yearly",
+    //     every: [27, 2, 10, 4],
+    //     type: "Expense",
+    //     category: "Education",
+    //     Icon: <Entypo name="open-book" color={IconColor} size={30} />,
+    //     note: "5th of October, 23:40 PM",
+    //     amount: 5000,
+    //     isActive: true,
+    // },
+    // {
+    //     item: "Spotify",
+    //     period: "Monthly",
+    //     every: [27, 10, 0],
+    //     type: "Expense",
+    //     category: "Music",
+    //     Icon: <FontAwesome name='music' color={IconColor} size={30} />,
+    //     note: "5th of month, 00:00 AM",
+    //     amount: 100,
+    //     isActive: true,
+    // },
+    // {
+    //     item: "Book Party Room",
+    //     period: "Adhoc",
+    //     every: [27, 2, 2024, 9, 47],
+    //     type: "Expense",
+    //     category: "Enterainment",
+    //     Icon: <FontAwesome name="gamepad" color={IconColor} size={30} />,
+    //     note: "1st of May, 11:00 AM",
+    //     amount: 100,
+    //     isActive: true,
+    // },
+    // {
+    //     item: "Car rental",
+    //     period: "Weekly",
+    //     every: [2, 10, 3],
+    //     type: "Expense",
+    //     category: "Transportation",
+    //     Icon: <MaterialIcons name="emoji-transportation" color={IconColor} size={30} />,
+    //     note: "test",
+    //     amount: 200,
+    //     isActive: true,
+    // },
 
-    {
-        item: "Lunch",
-        period: "Daily",
-        every: [12, 4],
-        type: "Expense",
-        category: "Lunch",
-        Icon: <Ionicons name="fast-food" color={IconColor} size={30} />,
-        note: "McDonald",
-        amount: 45,
-        isActive: true,
-    },
-    {
-        item: "",
-        period: "Daily",
-        every: [9, 35],
-        type: "Expense",
-        category: "Utilities",
-        Icon: <FontAwesome6 name="file-invoice-dollar" color={IconColor} size={30} />,
-        note: "McDonald",
-        amount: 105,
-        isActive: true,
-    },
+    // {
+    //     item: "Lunch",
+    //     period: "Daily",
+    //     every: [12, 4],
+    //     type: "Expense",
+    //     category: "Lunch",
+    //     Icon: <Ionicons name="fast-food" color={IconColor} size={30} />,
+    //     note: "McDonald",
+    //     amount: 45,
+    //     isActive: true,
+    // },
+    // {
+    //     item: "",
+    //     period: "Daily",
+    //     every: [9, 35],
+    //     type: "Expense",
+    //     category: "Utilities",
+    //     Icon: <FontAwesome6 name="file-invoice-dollar" color={IconColor} size={30} />,
+    //     note: "McDonald",
+    //     amount: 105,
+    //     isActive: true,
+    // },
 
 ]
 
